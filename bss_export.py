@@ -97,6 +97,7 @@ def bss_convert(filename):
     open_tag = ["load"]
     tag_link = ["script", "img", "link"]
 
+    remove_for_data(htmltree)
     for tag in enclosed_tag:
         extend_tag(htmltree, tag, before=True, after=True)
 
@@ -107,7 +108,6 @@ def bss_convert(filename):
         replace_static_links(htmltree, tag)
 
     replace_ref(htmltree)
-    remove_for_data(htmltree)
     save_file("render_" + filename, htmltree)
 
 if __name__ == "__main__":
