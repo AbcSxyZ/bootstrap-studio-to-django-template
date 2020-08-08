@@ -82,6 +82,13 @@ def replace_static_links(htmltree, tag_name):
         if href and not href.startswith("http"):
             element.attrs["href"] = static_template.format(href)
 
+def remove_for_data(htmltree):
+    """
+    Remove extra tag used to simulate for loop content.
+    """
+    for element in htmltree.select('[dj-for-data]'):
+        element.extract()
+
 def bss_convert(filename):
     htmltree = extract_file(filename)
 
@@ -100,6 +107,7 @@ def bss_convert(filename):
         replace_static_links(htmltree, tag)
 
     replace_ref(htmltree)
+    remove_for_data(htmltree)
     save_file("render_" + filename, htmltree)
 
 if __name__ == "__main__":
