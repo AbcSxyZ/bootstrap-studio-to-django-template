@@ -11,7 +11,7 @@ function load_venv()
 
     if [ -n "$VIRTUAL_ENV" ]
     then
-        #Actiave virtual env
+        #Activate virtual env
         source $SCRIPT_DIR/$VIRTUAL_ENV/bin/activate
     fi
 }
