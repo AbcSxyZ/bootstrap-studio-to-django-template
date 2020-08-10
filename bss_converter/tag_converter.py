@@ -65,7 +65,8 @@ class TagConverter:
         """
         Remove extra tag used to simulate for loop content.
         """
-        for element in self.tree.select('[dj-for-data]'):
+        bss_attribute = self._convert_bss_attribute("for-data")
+        for element in self.tree.select(f'[{bss_attribute}]'):
             element.extract()
 
     def _extend_tag(self, django_tag, before=False, after=False):
