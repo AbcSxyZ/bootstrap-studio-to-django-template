@@ -20,4 +20,4 @@ function load_venv()
 load_venv
 
 #Run bss template converter
-python3 $SCRIPT_DIR/bss_export.py $1
+python3 $SCRIPT_DIR/converter.py $1
