@@ -16,4 +16,8 @@ function load_venv()
     fi
 }
 
+#Load virtual env if necessary
 load_venv
+
+#Run bss template converter
+python3 $SCRIPT_DIR/bss_export.py $1

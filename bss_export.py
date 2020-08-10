@@ -111,9 +111,6 @@ def bss_convert(filename):
     save_file("render_" + filename, htmltree)
 
 if __name__ == "__main__":
-
     #Check program arguments validity
     if len(sys.argv) != 2:
         error_exit("syntax error")
-
-    bss_convert(sys.argv[1])
