@@ -1,3 +1,7 @@
+# custom settings
+
+env
+
 # Vim
 
 .*.sw[pno]
