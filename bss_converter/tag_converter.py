@@ -44,7 +44,8 @@ class TagConverter:
         #Control file existence and type
         if not os.path.exists(self.htmlfile) or \
                 not os.path.isfile(self.htmlfile):
-            error_exit(f"file '{filename}' is invalid or don't exists")
+            err_msg = "file '{}' is invalid or don't exists"
+            error_exit(err_msg.format(self.htmlfile))
 
         with open(self.htmlfile) as htmlstream:
             return BeautifulSoup(htmlstream, "html.parser")
