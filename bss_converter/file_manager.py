@@ -14,7 +14,7 @@ class FileManager:
     Use convention of 'static' and 'templates' folders
     to store asset and html templates respectively.
     """
-    DJANGO_PROJECT = os.environ['DJANGO_PROJECT']
+    DJANGO_PROJECT = os.environ.get('DJANGO_PROJECT')
 
     def __init__(self):
         self._convert_html_file()
