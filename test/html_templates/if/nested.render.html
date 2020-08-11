@@ -1,0 +1,15 @@
+{% load static %}
+{% if var==5 %}
+    <div id="random">
+    {% if name=='Admin' %}
+        <h1>
+            Administration
+        </h1>
+    {% endif %}
+    {% if name=='user' %}
+        <h1>
+            Userspace
+        </h1>
+    {% endif %}
+    </div>
+{% endif %}
