@@ -109,6 +109,8 @@ class FileManager:
         Move them in custom directory within the corresponding
         application.
         """
+        if not os.path.isdir(bss_folder):
+            return
         app_dest_template = Template(app_dest_folder)
         bss_folders = self._retrieve_folders(bss_folder, black_list)
         organized_folder = self._diff_applications(bss_folders)
