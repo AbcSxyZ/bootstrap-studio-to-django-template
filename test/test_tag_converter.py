@@ -87,6 +87,7 @@ class TagConverterTest(unittest.TestCase):
         self.compare_file("for_loop", "multiple")
         self.compare_file("for_loop", "nested")
         self.compare_file("for_loop", "manage_attribute")
+        self.compare_file("for_loop", "for_data")
 
     def test_if_clause(self):
         self.compare_file("if", "basic")
@@ -109,3 +110,8 @@ class TagConverterTest(unittest.TestCase):
     def test_static_links(self):
         self.compare_file("static_links", "src")
         self.compare_file("static_links", "href")
+
+    def test_reference(self):
+        self.compare_file("reference", "basic")
+        self.compare_file("reference", "multiple")
+        self.compare_file("reference", "with_content")
