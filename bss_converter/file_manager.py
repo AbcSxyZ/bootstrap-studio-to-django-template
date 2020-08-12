@@ -2,6 +2,7 @@ import glob
 from . import TagConverter
 import os
 from distutils.dir_util import copy_tree
+from string import Template
 
 class FileManager:
     """
@@ -19,7 +20,7 @@ class FileManager:
     def __init__(self):
         self._convert_html_file()
         self.apps = self._retrieve_django_apps()
-        self._move_to_django()
+        self._copy_to_django()
 
     def _convert_html_file(self):
         """
@@ -100,15 +101,16 @@ class FileManager:
 
         return diff_res
 
-    def _move_html(self):
+    def _move_bss_dir(self, bss_folder, app_dest_folder, black_list=[]):
         """
-        Move html files from bss export folder to django project
-        folder.
+        Move bss folder of a specific file type (js, html, css, etc.)
+        from the export directory to django project folder.
 
-        Move them in template directory within the corresponding
+        Move them in custom directory within the corresponding
         application.
         """
-        bss_folders = self._retrieve_folders(".", ["assets"])
+        app_dest_template = Template(app_dest_folder)
+        bss_folders = self._retrieve_folders(bss_folder, black_list)
         organized_folder = self._diff_applications(bss_folders)
 
         for bss_app_folder in organized_folder['applications']:
@@ -118,12 +120,20 @@ class FileManager:
             django_app_folder = os.path.join(self.DJANGO_PROJECT, \
                     app_name)
             django_app_folder = os.path.join(django_app_folder, \
-                    f"templates/{app_name}")
+                app_dest_template.substitute(app_name=app_name))
 
             copy_tree(bss_app_folder, django_app_folder)
 
-    def _move_to_django(self):
+    def _copy_to_django(self):
         """
-        """
-        self._move_html()
+        Copy all exported file from Boostrap Studio to a django
+        project folder.
 
+        Respect django architecture, placing file inside application.
+        Boostrap studio file system must match django architecture,
+        with already created apps.
+        """
+        self._move_bss_dir(".", "templates/${app_name}", ["assets"])
+        self._move_bss_dir("assets/css", "static/${app_name}/css")
+        self._move_bss_dir("assets/img", "static/${app_name}/img")
+        self._move_bss_dir("assets/js", "static/${app_name}/js")
