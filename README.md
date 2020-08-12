@@ -24,7 +24,8 @@ pip install -r requirements.txt
 ```
 You can use a virtual env inside directory of the export script, and specify folder in `env` file using `VIRTUAL_ENV` (see [env file](#env-file)).
 
-#### Bootstrap studio
+#### Bootstrap studio
+
 Go to `Export Options`.
 - In `Advanced > Export Script`, specify the **absolute path** of `django_export.sh` on your local machine.
 - Enable options `Use a CDN for libraries`, `Use absolute paths`
