@@ -1,11 +1,11 @@
 ## List of available features
 
 **Index :**
-- dj-for
-- dj-if
-- dj-block
-- dj-load
-- static links
+- [dj-for](#dj-for)
+- [dj-if](#dj-if)
+- [dj-block](#dj-block)
+- [dj-load](#dj-load)
+- [static links](#static-links)
 
 You must use `dj` to prefix all of your attributes inside Bootstrap Studio.
 
@@ -27,7 +27,7 @@ From [bss-file](test/html_templates/block/basic.html) to [django-file](test/html
 
 From [bss-file](test/html_templates/load/basic.html) to [django-file](test/html_templates/load/basic.render.html)
 
-## Static links
+## Static links
 
 Url for local resources will be convert to use static tag, like : `{% static 'folder/with/file' %}`.
 `script`, `img` and `link` tag will convert their attributes.
