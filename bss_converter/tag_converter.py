@@ -143,7 +143,7 @@ class TagConverter:
         bss_attribute = self._convert_bss_attribute("ref")
         for element in self.tree.select(f'[{bss_attribute}]'):
             attribute_value = element.attrs.pop(bss_attribute)
-            variable = f"{{ {attribute_value} }}"
+            variable = f"{{{{{attribute_value}}}}}"
             element.insert(0, variable)
 
     def _replace_background_img(self, raw_file):
