@@ -6,6 +6,7 @@
 - [dj-block](#dj-block)
 - [dj-load](#dj-load)
 - [static links](#static-links)
+- [Work in progess](#work-in-progress)
 
 You must use `dj` to prefix all of your attributes inside Bootstrap Studio.
 
@@ -35,3 +36,8 @@ Url for local resources will be convert to use static tag, like : `{% static 'fo
 Css `url()` links inside html will be also convert, for background image as example.
 
 From [bss-file](test/html_templates/static_links/src.html) to [django-file](test/html_templates/static_links/src.render.html)
+
+## Work in progess
+
+- `dj-ref` : Must add test
+- `dj-for-data` : Must add test
