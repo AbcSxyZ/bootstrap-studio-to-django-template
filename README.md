@@ -46,7 +46,7 @@ To see if everything is running properly.
 
 ## Features
 
-See all available features in ???
+See all [available features](features.md)
 
 ## Contribute
 Your help is welcome ! Here some contribution example:
