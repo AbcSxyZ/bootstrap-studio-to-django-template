@@ -3,6 +3,7 @@
 from bs4 import BeautifulSoup
 from pathlib import PurePath
 import sys
+import re
 import os
 
 def error_exit(msg):
@@ -57,7 +58,8 @@ class TagConverter:
         """
         with open(self.htmlfile, 'w') as htmlstream:
             print("{% load static %}", file=htmlstream)
-            print(self.tree.prettify(), file=htmlstream)
+            content = self._replace_background_img(self.tree.prettify())
+            print(content, file=htmlstream)
             
     @staticmethod
     def _convert_bss_attribute(attribute):
@@ -98,6 +100,9 @@ class TagConverter:
         In bss : file_type/app_name (ex: js/home)
         In django : app_name/file_type (ex: home/js)
         """
+        if file_link.startswith("http"):
+            return file_link
+
         #Remove file root
         if file_link.startswith("/"):
             file_link = file_link[1:]
@@ -140,3 +145,22 @@ class TagConverter:
             attribute_value = element.attrs.pop(bss_attribute)
             variable = f"{{ {attribute_value} }}"
             element.insert(0, variable)
+
+    def _replace_background_img(self, raw_file):
+        """
+        Replace background-image css attribute inside
+        an html file. Change it to serve file according
+        to django architecture.
+        """
+        def url_convert(match):
+            """
+            Use current filename and convert it to
+            a static link if needed.
+            """
+            url = match.group(1)
+            if not url.startswith("http"):
+                url = self._convert_bss_link(url)
+                url = f'{{% static "{url}" %}}'
+            return f"url({url})"
+
+        return re.sub("url\((.*?)\)", url_convert, raw_file)
