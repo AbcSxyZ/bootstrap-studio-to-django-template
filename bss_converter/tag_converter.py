@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from bs4 import BeautifulSoup
+from pathlib import PurePath
 import sys
 import os
 
@@ -89,6 +90,27 @@ class TagConverter:
             if after:
                 element.insert_after(close_tag)
 
+    def _convert_bss_link(self, file_link):
+        """
+        Change link pointed by static tag, file architecture
+        of export is different from django.
+
+        In bss : file_type/app_name (ex: js/home)
+        In django : app_name/file_type (ex: home/js)
+        """
+        #Remove file root
+        if file_link.startswith("/"):
+            file_link = file_link[1:]
+
+        path = PurePath(file_link)
+
+        app_name = path.parts[2]
+        file_type = path.parts[1]
+
+        #Create link by switching app_name and file_type
+        new_path = PurePath(app_name) / file_type / "/".join(path.parts[3:])
+        return str(new_path)
+
     def _replace_static_links(self, tag_name):
         """
         Replace tag who will use django static files.
@@ -102,9 +124,11 @@ class TagConverter:
             static_template = '{{% static "{}" %}}'
 
             if src and not src.startswith("http"):
+                src = self._convert_bss_link(src)
                 element.attrs["src"] = static_template.format(src)
 
             if href and not href.startswith("http"):
+                href = self._convert_bss_link(href)
                 element.attrs["href"] = static_template.format(href)
 
     def _replace_ref(self):
