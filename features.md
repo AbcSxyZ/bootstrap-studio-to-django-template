@@ -14,33 +14,33 @@ You must use `dj` to prefix all of your attributes inside Bootstrap Studio.
 
 To check example from test, `*.html` file is content inside bss, and `*.render.html` will correspond to rendered attributes.
 
-## dj-for
+#### dj-for
 
 From [bss-file](test/html_templates/for_loop/basic.html) to [django-file](test/html_templates/for_loop/basic.render.html)
 
-## dj-for-data
+#### dj-for-data
 
 Used to emulate replace for loop content within Bootstrap Studio.
 
 From [bss-file](test/html_templates/for_loop/for_data.html) to [django-file](test/html_templates/for_loop/for_data.render.html)
 
-## dj-if
+#### dj-if
 
 From [bss-file](test/html_templates/if/basic.html) to [django-file](test/html_templates/if/basic.render.html)
 
-## dj-block
+#### dj-block
 
 From [bss-file](test/html_templates/block/basic.html) to [django-file](test/html_templates/block/basic.render.html)
 
-## dj-ref
+#### dj-ref
 
 From [bss-file](test/html_templates/reference/basic.html) to [django-file](test/html_templates/reference/basic.render.html)
 
-## dj-load
+#### dj-load
 
 From [bss-file](test/html_templates/load/basic.html) to [django-file](test/html_templates/load/basic.render.html)
 
-## Static links
+#### Static links
 
 Url for local resources will be convert to use static tag, like : `{% static 'folder/with/file' %}`.
 `script`, `img` and `link` tag will convert their attributes.
