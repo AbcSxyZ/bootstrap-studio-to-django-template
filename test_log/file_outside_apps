@@ -1,8 +1,0 @@
-+ : Program output
-- : Reference output
-
-  django/
-      settings.py
-  home/
-- var/
-  

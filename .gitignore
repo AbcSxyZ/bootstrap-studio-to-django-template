@@ -1,6 +1,7 @@
 # custom settings
 
 env
+test_log/
 
 # Vim
 
