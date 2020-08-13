@@ -1,0 +1,24 @@
+apps=django-app[settings],home,menu
+
+assets/
+    |- img/
+        |- home/
+            |- logo.png
+            |- random.img
+home/
+    |- home.html
+
+======= EQUAL =======
+
+django-app/
+    |- settings.py
+home/
+    |- static/
+        |- home/
+            |- img/
+                |- logo.png
+                |- random.img
+    |- templates/
+        |- home/
+            |- home.html
+menu/
