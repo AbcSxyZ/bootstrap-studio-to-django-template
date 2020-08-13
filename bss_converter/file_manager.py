@@ -15,9 +15,8 @@ class FileManager:
     Use convention of 'static' and 'templates' folders
     to store asset and html templates respectively.
     """
-    DJANGO_PROJECT = os.environ.get('DJANGO_PROJECT')
-
     def __init__(self):
+        self.django_project = os.environ.get('DJANGO_PROJECT')
         self._convert_html_file()
         self.apps = self._retrieve_django_apps()
         self._copy_to_django()
@@ -57,7 +56,7 @@ class FileManager:
 
         Remove settings folder of the project.
         """
-        project_dirs = self._retrieve_folders(self.DJANGO_PROJECT)
+        project_dirs = self._retrieve_folders(self.django_project)
 
         #Find and remove configuration folder
         setting_folder = None
@@ -119,7 +118,7 @@ class FileManager:
             app_name = os.path.basename(bss_app_folder)
 
             #Find app folder in django project
-            django_app_folder = os.path.join(self.DJANGO_PROJECT, \
+            django_app_folder = os.path.join(self.django_project, \
                     app_name)
             django_app_folder = os.path.join(django_app_folder, \
                 app_dest_template.substitute(app_name=app_name))
