@@ -1,0 +1,20 @@
+apps=django[settings],first_app,second_app
+
+assets/
+first_app/
+    |- page1.html
+second_app/
+    |- page1bis.html
+
+========= EQUAL ========
+
+django/
+    |- settings.py
+first_app/
+    |- templates/
+        |- first_app/
+            |- page1.html
+second_app/
+    |- templates/
+        |- second_app/
+            |- page1bis.html

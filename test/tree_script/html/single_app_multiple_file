@@ -1,0 +1,20 @@
+apps=django[settings],home
+
+assets/
+home/
+    |- homepage.html
+    |- blop.html
+    |- last_file.html
+
+========= EQUAL ========
+
+django/
+    |- settings.py
+home/
+    |- templates/
+        |- home/
+            |- homepage.html
+            |- blop.html
+            |- last_file.html
+
+

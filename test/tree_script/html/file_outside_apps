@@ -1,0 +1,10 @@
+apps=django[settings],wrong_app
+
+assets/
+|- index.html
+
+========= EQUAL ========
+
+django/
+    |- settings.py
+wrong_app/

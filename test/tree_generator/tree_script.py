@@ -18,7 +18,7 @@ class TreeScript:
     and folders of the template, to compare moved files moved by
     FileManager class.
     """
-    DJANGO_DIR = os.path.realpath("tmp_django")
+    DJANGO_DIR = "tmp_django"
     BSS_DIR = "tmp_bss"
     def __init__(self, script_file):
         # Fix folder name at the top of template
@@ -28,16 +28,18 @@ class TreeScript:
         self.script = Directory(self.BSS_DIR, script)
         self.reference = Directory('django', reference)
 
+        self.django_workdir = os.path.realpath(self.DJANGO_DIR)
+
     def launch(self):
         #Create fake bss and django project
         self.script.generate()
         self.emulate_django_project()
 
-        os.environ["DJANGO_PROJECT"] = self.DJANGO_DIR
+        os.environ["DJANGO_PROJECT"] = self.django_workdir
 
         with Workdir(self.BSS_DIR):
             FileManager()
-            result_folders = self.from_directory(self.DJANGO_DIR)
+            result_folders = self.from_directory(self.django_workdir)
             result_tree = Directory("django_result", result_folders)
 
         return self.reference, result_tree

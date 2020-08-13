@@ -1,0 +1,15 @@
++ : Program output
+- : Reference output
+
+  django/
+      settings.py
+  first_app/
+      |- templates/
+          |- first_app/
+              |- page1.html
+  second_app/
+      |- templates/
+          |- second_app/
+              |- page1bis.html
++             |- yolo.html
+  

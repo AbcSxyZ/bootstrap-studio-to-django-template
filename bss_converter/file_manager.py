@@ -1,6 +1,7 @@
 import glob
 from . import TagConverter
 import os
+from pathlib import Path
 from distutils.dir_util import copy_tree
 from string import Template
 
@@ -123,6 +124,7 @@ class FileManager:
             django_app_folder = os.path.join(django_app_folder, \
                 app_dest_template.substitute(app_name=app_name))
 
+            Path(django_app_folder).mkdir(parents=True)
             copy_tree(bss_app_folder, django_app_folder)
 
     def _copy_to_django(self):
