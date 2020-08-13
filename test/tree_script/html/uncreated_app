@@ -1,0 +1,11 @@
+apps=django[settings],not_existing
+
+assets/
+home/
+    |- homepage.html
+
+========= EQUAL ========
+
+django/
+    |- settings.py
+not_existing/

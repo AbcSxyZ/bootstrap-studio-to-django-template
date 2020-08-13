@@ -1,0 +1,11 @@
+apps=django[settings],home
+
+assets/
+    |- img/
+        |- banner.png
+
+========= EQUAL ========
+
+django/
+    |- settings.py
+home/

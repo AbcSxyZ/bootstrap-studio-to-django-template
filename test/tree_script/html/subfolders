@@ -1,0 +1,28 @@
+apps=django[settings],booking
+
+assets/
+booking/
+    |- form.html
+    |- price.html
+    |- fly/
+        |- operator.html
+        |- fly_compagny/
+            |- list.html
+        |- plane.html
+    |- gdpr.html
+
+========= EQUAL ========
+
+django/
+    |- settings.py
+booking/
+    |- templates/
+        |- booking/
+            |- form.html
+            |- price.html
+            |- fly/
+                |- operator.html
+                |- fly_compagny/
+                    |- list.html
+                |- plane.html
+            |- gdpr.html

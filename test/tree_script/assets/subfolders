@@ -1,0 +1,28 @@
+apps=django[settings],home
+
+assets/
+    |- img/
+        |- home/
+            |- banner.png
+            |- utils/
+                |- 404.html
+                |- backup/
+                    |- save.html
+                |- 500.html
+            |- logo.svg
+
+========= EQUAL ========
+
+django/
+    |- settings.py
+home/
+    |- static/
+        |- home/
+            |- img/
+                |- banner.png
+                |- utils/
+                    |- 404.html
+                    |- backup/
+                        |- save.html
+                    |- 500.html
+                |- logo.svg

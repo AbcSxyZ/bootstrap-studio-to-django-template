@@ -48,4 +48,18 @@ class FileManagerTest(unittest.TestCase):
         self.run_script("html", "single_app_multiple_file")
         self.run_script("html", "multiple_app_single_file")
         self.run_script("html", "multiple_app_multiple_file")
+        self.run_script("html", "subfolders")
         self.run_script("html", "file_outside_apps")
+        self.run_script("html", "file_outside_and_file_correct")
+        self.run_script("html", "created_and_uncreated_app")
+
+    def test_assets(self):
+        self.run_script("assets", "img_single_app_single_file")
+        self.run_script("assets", "img_single_app_multiple_file")
+        self.run_script("assets", "img_multiple_app_single_file")
+        self.run_script("assets", "img_multiple_app_multiple_file")
+        self.run_script("assets", "subfolders")
+        self.run_script("assets", "img_multiple_app_multiple_file")
+        self.run_script("assets", "uncreated_app")
+        self.run_script("assets", "file_outside_apps")
+        self.run_script("assets", "file_outside_and_file_correct")
