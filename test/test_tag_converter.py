@@ -108,8 +108,10 @@ class TagConverterTest(unittest.TestCase):
         self.compare_file("load", "manage_attribute")
 
     def test_static_links(self):
+        self.compare_file("static_links", "link_conversion")
         self.compare_file("static_links", "src")
         self.compare_file("static_links", "href")
+        self.compare_file("static_links", "css_url")
 
     def test_reference(self):
         self.compare_file("reference", "basic")
