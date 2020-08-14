@@ -45,9 +45,12 @@ From [bss-file](test/html_templates/load/basic.html) to [django-file](test/html_
 Url for local resources will be convert to use static tag, like : `{% static 'folder/with/file' %}`.
 `script`, `img` and `link` tag will convert their attributes.
 
+From [bss-file](test/html_templates/static_links/src.html) to [django-file](test/html_templates/static_links/src.render.html)
+
 Css `url()` links inside html will be also convert, for background image as example.
 
-From [bss-file](test/html_templates/static_links/src.html) to [django-file](test/html_templates/static_links/src.render.html)
+From [bss-file](test/html_templates/static_links/css_url.html) to [django-file](test/html_templates/static_links/css_url.render.html)
+
 
 ## Work in progress
 Nothing
