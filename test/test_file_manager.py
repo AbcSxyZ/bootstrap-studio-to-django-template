@@ -63,3 +63,13 @@ class FileManagerTest(unittest.TestCase):
         self.run_script("assets", "uncreated_app")
         self.run_script("assets", "file_outside_apps")
         self.run_script("assets", "file_outside_and_file_correct")
+        self.run_script("assets", "multiple_assets_type")
+
+    def test_mixed_assets_and_html(self):
+        self.run_script("mixed", "single_file_single_app")
+        self.run_script("mixed", "multiple_file_single_app")
+        self.run_script("mixed", "single_file_multiple_app")
+        self.run_script("mixed", "multiple_file_multiple_app")
+        self.run_script("mixed", "subfolders")
+        self.run_script("mixed", "multiple_assets_type")
+        self.run_script("mixed", "multiple_assets_type_multiple_app")

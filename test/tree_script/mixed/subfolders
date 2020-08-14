@@ -1,0 +1,61 @@
+apps=django[settings],home,forum
+
+assets/
+    |- img/
+        |- home/
+            |- userspace/
+                |- profil.jpeg
+                |- brand.svg
+            |- banner.png
+        |- forum/
+            |- banner.png
+            |- common/
+                    |- admins/
+                        |- contract.jpeg
+                    |- non-admin/
+                        |- user-contract.jpeg
+                        |- agreement.png
+home/
+    |- userspace/
+        |- user_home.html
+        |- private_space/
+            |- private_user_home.html
+            |- private_friends.html
+    |- homepage.html
+forum/
+    |- forum_home.html
+
+========= EQUAL ========
+
+django/
+    |- settings.py
+home/
+    |- templates/
+        |- home/
+            |- userspace/
+                |- user_home.html
+                |- private_space/
+                    |- private_user_home.html
+                    |- private_friends.html
+            |- homepage.html
+    |- static/
+        |- home/
+            |- img/
+                |- userspace/
+                    |- profil.jpeg
+                    |- brand.svg
+                |- banner.png
+forum/
+    |- templates/
+        |- forum/
+            |- forum_home.html
+    |- static/
+        |- forum/
+            |- img/
+                |- banner.png
+                |- common/
+                        |- admins/
+                            |- contract.jpeg
+                        |- non-admin/
+                            |- user-contract.jpeg
+                            |- agreement.png

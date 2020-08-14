@@ -1,0 +1,33 @@
+apps=django[settings],home,forum
+
+assets/
+    |- img/
+        |- home/
+            |- banner.png
+        |- forum/
+            |- banner.png
+home/
+    |- homepage.html
+forum/
+    |- forum_home.html
+
+========= EQUAL ========
+
+django/
+    |- settings.py
+home/
+    |- templates/
+        |- home/
+            |- homepage.html
+    |- static/
+        |- home/
+            |- img/
+                |- banner.png
+forum/
+    |- templates/
+        |- forum/
+            |- forum_home.html
+    |- static/
+        |- forum/
+            |- img/
+                |- banner.png

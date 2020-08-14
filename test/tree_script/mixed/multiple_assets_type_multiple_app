@@ -1,0 +1,69 @@
+apps=django[settings],home,forum
+
+assets/
+    |- img/
+        |- home/
+            |- banner.png
+            |- logo.png
+        |- forum/
+            |- forum_chart.png
+            |- forum_support.png
+    |- js/
+        |- home/
+            |- script.js
+            |- animation.js
+        |- forum/
+            |- logout.js
+            |- login.js
+    |- css/
+        |- home/
+            |- style.css
+            |- homepage.css
+        |- forum/
+            |- user_settings.css
+            |- common_settings.css
+home/
+    |- homepage.html
+    |- 404.html
+forum/
+    |- forum.html
+    |- logout.html
+    |- login.html
+
+========= EQUAL ========
+
+django/
+    |- settings.py
+home/
+    |- templates/
+        |- home/
+            |- homepage.html
+            |- 404.html
+    |- static/
+        |- home/
+            |- img/
+                |- banner.png
+                |- logo.png
+            |- js/
+                |- script.js
+                |- animation.js
+            |- css/
+                |- style.css
+                |- homepage.css
+forum/
+    |- templates/
+        |- forum/
+            |- forum.html
+            |- logout.html
+            |- login.html
+    |- static/
+        |- forum/
+            |- img/
+                |- forum_chart.png
+                |- forum_support.png
+            |- js/
+                |- logout.js
+                |- login.js
+            |- css/
+                |- user_settings.css
+                |- common_settings.css

@@ -1,0 +1,39 @@
+apps=django[settings],home
+
+assets/
+    |- img/
+        |- home/
+            |- banner.png
+            |- logo.png
+    |- js/
+        |- home/
+            |- script.js
+            |- animation.js
+    |- css/
+        |- home/
+            |- style.css
+            |- homepage.css
+home/
+    |- homepage.html
+    |- 404.html
+
+========= EQUAL ========
+
+django/
+    |- settings.py
+home/
+    |- templates/
+        |- home/
+            |- homepage.html
+            |- 404.html
+    |- static/
+        |- home/
+            |- img/
+                |- banner.png
+                |- logo.png
+            |- js/
+                |- script.js
+                |- animation.js
+            |- css/
+                |- style.css
+                |- homepage.css
