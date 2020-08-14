@@ -18,7 +18,9 @@ Django is having an application based architecture, **Bootstrap Studio developem
 
 ## Installation
 
-#### Python
+#### Python 
+**WARNING: Require python 3.6 or higher**
+
 Install project dependencies :
 ```
 pip install -r requirements.txt
