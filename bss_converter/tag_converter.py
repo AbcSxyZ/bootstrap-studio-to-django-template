@@ -100,9 +100,6 @@ class TagConverter:
         In bss : file_type/app_name (ex: js/home)
         In django : app_name/file_type (ex: home/js)
         """
-        if file_link.startswith("http"):
-            return file_link
-
         #Remove file root
         if file_link.startswith("/"):
             file_link = file_link[1:]
@@ -122,19 +119,29 @@ class TagConverter:
         
         e.g. img, script etc.
         """
+        link_allowed_attributes = ["href", "src"]
+
+        def find_ressource_attribute(element_attributes):
+            """
+            Find which attribute is used to point to a ressource.
+            Return used attribute, and his value.
+            """
+            for attribute in link_allowed_attributes:
+                value = element_attributes.get(attribute)
+                if value:
+                    return attribute, value
+
+        static_template = '{{% static "{}" %}}'
+
         for element in self.tree.select(tag_name):
-            href = element.attrs.get("href")
-            src = element.attrs.get("src")
+            attribute, link = find_ressource_attribute(element.attrs)
 
-            static_template = '{{% static "{}" %}}'
+            if link.startswith("http"):
+                continue
 
-            if src and not src.startswith("http"):
-                src = self._convert_bss_link(src)
-                element.attrs["src"] = static_template.format(src)
-
-            if href and not href.startswith("http"):
-                href = self._convert_bss_link(href)
-                element.attrs["href"] = static_template.format(href)
+            converted_link = self._convert_bss_link(link)
+            element.attrs[attribute] = \
+                    static_template.format(converted_link)
 
     def _replace_ref(self):
         """
