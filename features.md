@@ -8,7 +8,6 @@
 - [dj-ref](#dj-ref)
 - [dj-load](#dj-load)
 - [static links](#static-links)
-- [Work in progess](#work-in-progress)
 
 You must use `dj` to prefix all of your attributes inside Bootstrap Studio.
 
