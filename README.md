@@ -45,7 +45,7 @@ Go to `Export Options`.
 #### Env file
 Rename `env.template` to `env`.  
 
-Available varibles:
+Available variables:
 - `DJANGO_PROJECT` **(mandatory)** : Absolute path of your django project folder.
 - `VIRTUAL_ENV` **(optionnal)** : relative path of virtual env directory, **MUST BE** within this script folder.
 
