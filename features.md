@@ -50,7 +50,3 @@ From [bss-file](test/html_templates/static_links/src.html) to [django-file](test
 Css `url()` links inside html will be also convert, for background image as example.
 
 From [bss-file](test/html_templates/static_links/css_url.html) to [django-file](test/html_templates/static_links/css_url.render.html)
-
-
-## Work in progress
-Nothing
