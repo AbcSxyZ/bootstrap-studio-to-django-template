@@ -11,6 +11,7 @@ Convert a bootstrap studio file in a django (Jinja like) template.
 - [Installation](#installation)
 - [Features](#features)
 - [Contribute](#contribute)
+- [Licence](#licence)
 
 ## How it works
 
@@ -64,3 +65,7 @@ Your help is welcome ! Here some contribution example:
 - Code review
 - Test coverage
 - Whatever you have in mind for the software :)
+
+## Licence
+
+Free software under [AGPL](LICENCE). Please share your modification to respect term of licence :)  
