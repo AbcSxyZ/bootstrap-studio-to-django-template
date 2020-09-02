@@ -53,11 +53,10 @@ See all [available features](features.md)
 
 ## Contribute
 Your help is welcome ! Here some contribution example:
-- Test the program, give feedback !
-- Correct spelling mistake
+- [Ask/work for new feature](community_asked_features.md)
+- Add issue/fix for bug
+- Correct spelling/English mistake
 - Improve documentation
 - Code review
-- Signal/Correct bug
-- Offers features
 - Test coverage
 - ...
