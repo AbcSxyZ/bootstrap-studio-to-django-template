@@ -1,5 +1,6 @@
 # bootstrap-studio-to-django-template
 [![Build Status](https://travis-ci.org/AbcSxyZ/bootstrap-studio-to-django-template.svg?branch=master)](https://travis-ci.org/AbcSxyZ/bootstrap-studio-to-django-template)
+[![Coverage Status](https://coveralls.io/repos/github/AbcSxyZ/bootstrap-studio-to-django-template/badge.svg?branch=coverall)](https://coveralls.io/github/AbcSxyZ/bootstrap-studio-to-django-template?branch=coverall)
 
 Convert a bootstrap studio file in a django (Jinja like) template.  
 *Credit: Original idea coming from [lingster/django-bootstrap-studio-tools](https://github.com/lingster/django-bootstrap-studio-tools)*
