@@ -66,6 +66,6 @@ Your help is welcome ! Here some contribution example:
 - Test coverage
 - Whatever you have in mind for the software :)
 
-## Licence
+## License
 
-Free software under [AGPL](LICENCE). Please share your modification to respect term of licence :)  
+Free software under [AGPL](LICENSE). Please share your modification to respect term of license :)  
