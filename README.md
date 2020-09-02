@@ -63,4 +63,4 @@ Your help is welcome ! Here some contribution example:
 - Improve documentation
 - Code review
 - Test coverage
-- ...
+- Whatever you have in mind for the software :)
